@@ -2,7 +2,7 @@ name: Mirror Helm charts
 on:
   push:
   schedule:
-    - cron: "0 0 * * *" # Run at midnight every night
+    - cron: "0 0 * * 1" # Run at midnight every Monday
   workflow_dispatch:
 env:
   CHART_NAME: gpu-operator
