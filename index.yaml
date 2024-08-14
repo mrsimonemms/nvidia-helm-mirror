@@ -1,3 +1,188 @@
 apiVersion: v1
-entries: []
+entries:
+  auth:
+  - apiVersion: v2
+    appVersion: 0.0.0
+    created: "2022-11-22T11:40:08.938023729Z"
+    description: Authentication microservice written with NestJS framework
+    digest: 5e5c5ebe277181fc60b5099b58a824a33ebf62a9bf5cddc6fed97db33ae7dfb9
+    home: https://gitlab.com/MrSimonEmms/nestjs-modules/-/tree/master/charts/auth
+    icon: https://docs.nestjs.com/assets/logo-small.svg
+    keywords:
+    - authentication
+    - nestjs
+    - service
+    maintainers:
+    - email: simon@simonemms.com
+      name: Simon Emms
+      url: https://simonemms.com
+    name: auth
+    type: application
+    urls:
+    - https://mrsimonemms.github.io/nvidia-helm-mirror/auth-0.0.0.tgz
+    version: 0.0.0
+  gitpod-monitoring:
+  - apiVersion: v2
+    created: "2022-11-22T11:40:09.029619107Z"
+    dependencies:
+    - alias: prometheus
+      condition: prometheus.enabled
+      name: kube-prometheus-stack
+      repository: https://prometheus-community.github.io/helm-charts
+      version: ^35.5.0
+    description: Monitoring for a Gitpod deployment
+    digest: 36c748e8519b414fb2ac306f514de37b7dcf8a7297bc3036b017a57cd091d908
+    home: https://github.com/MrSimonEmms/gitpod-monitoring
+    icon: https://www.gitpod.io/svg/media-kit/logo-mark.svg
+    keywords:
+    - gitpod
+    - monitoring
+    - prometheus
+    - grafana
+    maintainers:
+    - email: simon@simonemms.com
+      name: Simon Emms
+      url: https://simonemms.com
+    name: gitpod-monitoring
+    type: application
+    urls:
+    - https://mrsimonemms.github.io/nvidia-helm-mirror/gitpod-monitoring-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    created: "2022-11-22T11:40:08.986600013Z"
+    dependencies:
+    - alias: prometheus
+      condition: prometheus.enabled
+      name: kube-prometheus-stack
+      repository: https://prometheus-community.github.io/helm-charts
+      version: ^35.5.0
+    description: Monitoring for a Gitpod deployment
+    digest: 99177b8717974ae87dd9cdf6baab24ec8fd07c03a899cb2d59154bcc891a0e52
+    home: https://github.com/MrSimonEmms/gitpod-monitoring
+    icon: https://www.gitpod.io/svg/media-kit/logo-mark.svg
+    keywords:
+    - gitpod
+    - monitoring
+    - prometheus
+    - grafana
+    maintainers:
+    - email: simon@simonemms.com
+      name: Simon Emms
+      url: https://simonemms.com
+    name: gitpod-monitoring
+    type: application
+    urls:
+    - https://mrsimonemms.github.io/nvidia-helm-mirror/gitpod-monitoring-0.1.0.tgz
+    version: 0.1.0
+  openfaas-amqp1-0-connector:
+  - apiVersion: v2
+    appVersion: 1.1.1
+    created: "2022-11-22T11:40:09.033503996Z"
+    description: Connect OpenFaaS functions to AMQP 1.0
+    digest: ff95c77ba6c4f11e782988ff60fad9e8eb4b3e0b9365ce782db7323f138c8543
+    home: https://gitlab.com/MrSimonEmms/openfaas-amqp1.0-connector
+    icon: https://raw.githubusercontent.com/openfaas/media/master/OpenFaaS_logo_stacked_opaque.png
+    keywords:
+    - functions
+    - service
+    - amqp
+    - rabbitmq
+    - azure service bus
+    maintainers:
+    - email: simon@simonemms.com
+      name: Simon Emms
+      url: https://simonemms.com
+    name: openfaas-amqp1-0-connector
+    type: application
+    urls:
+    - https://mrsimonemms.github.io/nvidia-helm-mirror/openfaas-amqp1-0-connector-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
+    appVersion: 1.1.0
+    created: "2022-11-22T11:40:09.032382545Z"
+    description: Connect OpenFaaS functions to AMQP 1.0
+    digest: d9c52410bf97f94c85dc538bdd78d7d3802f59b9210adecb8c458b36881a2887
+    home: https://gitlab.com/MrSimonEmms/openfaas-amqp1.0-connector
+    icon: https://raw.githubusercontent.com/openfaas/media/master/OpenFaaS_logo_stacked_opaque.png
+    keywords:
+    - functions
+    - service
+    - amqp
+    - rabbitmq
+    - azure service bus
+    maintainers:
+    - email: simon@simonemms.com
+      name: Simon Emms
+      url: https://simonemms.com
+    name: openfaas-amqp1-0-connector
+    type: application
+    urls:
+    - https://mrsimonemms.github.io/nvidia-helm-mirror/openfaas-amqp1-0-connector-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-11-22T11:40:09.031489708Z"
+    description: Connect OpenFaaS functions to AMQP 1.0
+    digest: bcda1a229a7d19015d9f41a4e5735473550dd55e3a4ac862f10d12dad1e31f50
+    home: https://gitlab.com/MrSimonEmms/openfaas-amqp1.0-connector
+    icon: https://raw.githubusercontent.com/openfaas/media/master/OpenFaaS_logo_stacked_opaque.png
+    keywords:
+    - functions
+    - service
+    - amqp
+    - rabbitmq
+    - azure service bus
+    maintainers:
+    - email: simon@simonemms.com
+      name: Simon Emms
+      url: https://simonemms.com
+    name: openfaas-amqp1-0-connector
+    type: application
+    urls:
+    - https://mrsimonemms.github.io/nvidia-helm-mirror/openfaas-amqp1-0-connector-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-11-22T11:40:09.030635913Z"
+    description: Connect OpenFaaS functions to AMQP 1.0
+    digest: dec8bbe655d0e1e480cf0e5a9312b7b1d14283e2a5287a74a6acf44c409c1fd6
+    home: https://gitlab.com/MrSimonEmms/openfaas-amqp1.0-connector
+    icon: https://raw.githubusercontent.com/openfaas/media/master/OpenFaaS_logo_stacked_opaque.png
+    keywords:
+    - functions
+    - service
+    - amqp
+    - rabbitmq
+    - azure service bus
+    maintainers:
+    - email: simon@simonemms.com
+      name: Simon Emms
+      url: https://simonemms.com
+    name: openfaas-amqp1-0-connector
+    type: application
+    urls:
+    - https://mrsimonemms.github.io/nvidia-helm-mirror/openfaas-amqp1-0-connector-1.0.0.tgz
+    version: 1.0.0
+  openfaas-pushbullet-connector:
+  - apiVersion: v2
+    created: "2022-11-22T11:40:09.034308686Z"
+    description: Trigger OpenFaaS jobs from Pushbullet
+    digest: b24eef0c165340a670845f8a35860c25c8b86d17443364adbe4a1f9f6abd5fc7
+    home: https://github.com/MrSimonEmms/openfaas-pushbullet-connector
+    icon: https://raw.githubusercontent.com/openfaas/media/master/OpenFaaS_logo_stacked_opaque.png
+    keywords:
+    - connector
+    - functions
+    - openfaas
+    - pushbullet
+    - triggers
+    maintainers:
+    - email: simon@simonemms.com
+      name: Simon Emms
+      url: https://simonemms.com
+    name: openfaas-pushbullet-connector
+    type: application
+    urls:
+    - https://mrsimonemms.github.io/nvidia-helm-mirror/openfaas-pushbullet-connector-0.1.0.tgz
+    version: 0.1.0
 generated: "2022-11-22T11:40:08.935824464Z"
