@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 env:
   GH_PAGES_URL: mrsimonemms.github.io/nvidia-helm-mirror
-  REGISTRY_SOURCE: https://helm.simonemms.com
+  REGISTRY_SOURCE: https://helm.ngc.nvidia.com/nvidia
 permissions:
   contents: write
 jobs:
