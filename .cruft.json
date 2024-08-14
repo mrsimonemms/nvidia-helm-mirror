@@ -1,0 +1,17 @@
+{
+  "template": "https://github.com/mrsimonemms/new",
+  "commit": "89bd11f1726436cbc857f868c839c4bc3bb9ca7e",
+  "checkout": "main",
+  "context": {
+    "cookiecutter": {
+      "project_name": "nvidia-helm-mirror",
+      "description": "Mirror for the NVIDIA Helm charts",
+      "author": "Simon Emms <simon@simonemms.com>",
+      "_template": "https://github.com/mrsimonemms/new"
+    }
+  },
+  "directory": "blank",
+  "skip": [
+    ".git"
+  ]
+}
