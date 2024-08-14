@@ -1,0 +1,38 @@
+name: Mirror Helm charts
+on:
+  push:
+  schedule:
+    - cron: "0 0 * * *" # Run at midnight every night
+  workflow_dispatch:
+env:
+  GH_PAGES_URL: mrsimonemms.github.io/nvidia-helm-mirror
+  REGISTRY_SOURCE: https://helm.simonemms.com
+permissions:
+  contents: write
+jobs:
+  download:
+    name: Download charts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+
+      - uses: actions/setup-go@v5
+
+      - name: Install helm-mirror
+        run: go install github.com/konstructio/helm-mirror@latest
+
+      - name: Download all Helm charts
+        if: github.ref == 'refs/heads/main'
+        run: helm-mirror "$REGISTRY_SOURCE" "$(pwd)" --all-versions --verbose --new-root-url "https://${{ env.GH_PAGES_URL }}"
+
+      - name: "Commit changes"
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions Bot"
+          git add .
+          git commit -m "chore: update Helm charts" || true
+          git push origin gh-pages
