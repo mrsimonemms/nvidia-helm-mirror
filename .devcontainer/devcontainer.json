@@ -1,7 +1,11 @@
 {
   "image": "ghcr.io/mrsimonemms/devcontainers/full",
   "name": "devcontainer",
-  "features": {},
+  "features": {
+    "ghcr.io/azutake/devcontainer-features/go-packages-install:0": {
+      "PACKAGES": "github.com/konstructio/helm-mirror@latest"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
