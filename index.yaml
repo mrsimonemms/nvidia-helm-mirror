@@ -1,188 +1,1481 @@
 apiVersion: v1
 entries:
-  auth:
+  cuopt:
   - apiVersion: v2
-    appVersion: 0.0.0
-    created: "2022-11-22T11:40:08.938023729Z"
-    description: Authentication microservice written with NestJS framework
-    digest: 5e5c5ebe277181fc60b5099b58a824a33ebf62a9bf5cddc6fed97db33ae7dfb9
-    home: https://gitlab.com/MrSimonEmms/nestjs-modules/-/tree/master/charts/auth
-    icon: https://docs.nestjs.com/assets/logo-small.svg
-    keywords:
-    - authentication
-    - nestjs
-    - service
-    maintainers:
-    - email: simon@simonemms.com
-      name: Simon Emms
-      url: https://simonemms.com
-    name: auth
+    appVersion: 24.03.00
+    created: "2024-04-15T18:56:17Z"
+    description: NVIDIA cuOpt enables routing optimization
+    digest: 8f21d5e90ce5c175c077658232eae2cb1d13cf5d80361e9e0e1df1067ed57175
+    name: cuopt
     type: application
     urls:
-    - https://mrsimonemms.github.io/nvidia-helm-mirror/auth-0.0.0.tgz
-    version: 0.0.0
-  gitpod-monitoring:
+    - charts/cuopt-24.03.00.tgz
+    version: 24.03.00
+  cybersecurity-dfp:
   - apiVersion: v2
-    created: "2022-11-22T11:40:09.029619107Z"
+    appVersion: "23.07"
+    created: "2024-03-09T01:10:53Z"
     dependencies:
-    - alias: prometheus
-      condition: prometheus.enabled
-      name: kube-prometheus-stack
-      repository: https://prometheus-community.github.io/helm-charts
-      version: ^35.5.0
-    description: Monitoring for a Gitpod deployment
-    digest: 36c748e8519b414fb2ac306f514de37b7dcf8a7297bc3036b017a57cd091d908
-    home: https://github.com/MrSimonEmms/gitpod-monitoring
-    icon: https://www.gitpod.io/svg/media-kit/logo-mark.svg
-    keywords:
-    - gitpod
-    - monitoring
-    - prometheus
-    - grafana
-    maintainers:
-    - email: simon@simonemms.com
-      name: Simon Emms
-      url: https://simonemms.com
-    name: gitpod-monitoring
+    - name: nvidia-platform
+      repository: ""
+    - condition: minioEnabled
+      name: minio
+      repository: ""
+    - condition: mlflowEnabled
+      name: mlflow
+      repository: ""
+    - condition: kafkaEnabled
+      name: strimzi-kafka
+      repository: ""
+    description: Helm chart to deploy the Morpheus Digital Finger Printing AI Workflow.
+    digest: 9f21f9fae383d3d2529b321a8da8a7753969db5bae6c99411d20a6f2c7d4cf43
+    name: cybersecurity-dfp
     type: application
     urls:
-    - https://mrsimonemms.github.io/nvidia-helm-mirror/gitpod-monitoring-0.2.0.tgz
-    version: 0.2.0
+    - charts/cybersecurity-dfp-0.2.1.tgz
+    version: 0.2.1
+  cybersecurity-sp:
   - apiVersion: v2
-    created: "2022-11-22T11:40:08.986600013Z"
+    appVersion: "23.07"
+    created: "2024-03-09T00:47:51Z"
     dependencies:
-    - alias: prometheus
-      condition: prometheus.enabled
-      name: kube-prometheus-stack
-      repository: https://prometheus-community.github.io/helm-charts
-      version: ^35.5.0
-    description: Monitoring for a Gitpod deployment
-    digest: 99177b8717974ae87dd9cdf6baab24ec8fd07c03a899cb2d59154bcc891a0e52
-    home: https://github.com/MrSimonEmms/gitpod-monitoring
-    icon: https://www.gitpod.io/svg/media-kit/logo-mark.svg
-    keywords:
-    - gitpod
-    - monitoring
-    - prometheus
-    - grafana
-    maintainers:
-    - email: simon@simonemms.com
-      name: Simon Emms
-      url: https://simonemms.com
-    name: gitpod-monitoring
+    - name: maildemo
+      repository: ""
+    - name: mlflow
+      repository: ""
+    - name: nvidia-platform
+      repository: ""
+    description: Helm chart to deploy the Morpheus Spear Phishing AI Workflow.
+    digest: 8b823d894221cf4b0fe36bb09b36ca83dc509a0af45d9cf757eabf27ff65f1ad
+    name: cybersecurity-sp
     type: application
     urls:
-    - https://mrsimonemms.github.io/nvidia-helm-mirror/gitpod-monitoring-0.1.0.tgz
+    - charts/cybersecurity-sp-0.1.0.tgz
     version: 0.1.0
-  openfaas-amqp1-0-connector:
+  deepstream-its:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-03-09T23:52:29Z"
+    description: A Helm chart for Kubernetes
+    digest: 78ba62f6915d73561efaa88b35ef2929e497d15fcc17c100478593f765b8e056
+    name: deepstream-its
+    urls:
+    - charts/deepstream-its-0.2.0.tgz
+    version: 0.2.0
+  ds-face-mask-detection:
+  - apiVersion: v1
+    appVersion: "1.2"
+    created: "2021-04-21T11:45:34Z"
+    description: A Helm chart for Deepstream Intelligent Video Analytics
+    digest: 4b93a00bcd84b2b57d14542b726f0153cba89b4016fbcc28f048b9fc1d34623e
+    name: ds-face-mask-detection
+    urls:
+    - charts/ds-face-mask-detection-1.0.0.tgz
+    version: 1.0.0
+  ds-lipactivity:
   - apiVersion: v2
-    appVersion: 1.1.1
-    created: "2022-11-22T11:40:09.033503996Z"
-    description: Connect OpenFaaS functions to AMQP 1.0
-    digest: ff95c77ba6c4f11e782988ff60fad9e8eb4b3e0b9365ce782db7323f138c8543
-    home: https://gitlab.com/MrSimonEmms/openfaas-amqp1.0-connector
-    icon: https://raw.githubusercontent.com/openfaas/media/master/OpenFaaS_logo_stacked_opaque.png
+    appVersion: 0.0.1
+    created: "2022-03-04T06:46:53Z"
+    description: DS Lip activity
+    digest: 4a2690704a63d2d07ff2c96313922bb94b258be138dc79b2bce0ec481e831d92
+    name: ds-lipactivity
+    urls:
+    - charts/ds-lipactivity-0.0.1.tgz
+    version: 0.0.1
+  fed-svr-3:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-04-07T19:45:54Z"
+    description: Federated Learning HELM Chart
+    digest: eb9e497e4cc17bba711a237d31484cbe7b52ec33c5c8249955042abbb8d09b09
+    name: fed-svr-3
+    urls:
+    - charts/fed-svr-3-0.9.0.tgz
+    version: 0.9.0
+  fed-wrk-3:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-04-07T19:46:00Z"
+    description: Federated learning worker HELM Chart
+    digest: 4c83f057f6f6b94c6312a9249627e7c174eb9638a91328eda8d82f8f64dec4bc
+    name: fed-wrk-3
+    urls:
+    - charts/fed-wrk-3-0.9.0.tgz
+    version: 0.9.0
+  gpu-operator:
+  - apiVersion: v2
+    appVersion: v24.6.1
+    created: "2024-08-12T20:21:01Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: v0.16.3
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: e19ee828dbc5820ad32618d3ccc6a459f2a94ade83fae3cc60bb27514e3f9e4a
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
     keywords:
-    - functions
-    - service
-    - amqp
-    - rabbitmq
-    - azure service bus
-    maintainers:
-    - email: simon@simonemms.com
-      name: Simon Emms
-      url: https://simonemms.com
-    name: openfaas-amqp1-0-connector
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v24.6.1.tgz
+    version: v24.6.1
+  - apiVersion: v2
+    appVersion: v24.6.0
+    created: "2024-07-30T23:02:55Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: v0.16.3
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 6c124bee9173008ef1d4da3675da7c46e8b6b7b85f76b3232ce477ad89d10d16
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v24.6.0.tgz
+    version: v24.6.0
+  - apiVersion: v2
+    appVersion: v24.3.0
+    created: "2024-04-30T23:16:09Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: v0.15.4
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: ca3ad7585046897a772f0faf664a1538309886c5687f4652520752f428f0987e
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v24.3.0.tgz
+    version: v24.3.0
+  - apiVersion: v2
+    appVersion: v23.9.2
+    created: "2024-03-06T22:03:00Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: v0.14.2
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 9263a5647500d5364ffd91e009e83aa5264861a52f608ce33b247337f5d19593
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v23.9.2.tgz
+    version: v23.9.2
+  - apiVersion: v2
+    appVersion: v23.9.1
+    created: "2023-12-08T00:38:54Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: v0.14.2
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: ac943e278ddd52df24ab74f88a4a7e53622c26469795a24941ac256f81f5c5e8
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v23.9.1.tgz
+    version: v23.9.1
+  - apiVersion: v2
+    appVersion: v23.9.0
+    created: "2023-10-20T21:54:41Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: v0.14.2
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 13d8583b37837188e309c36f5507dfee418640874ca6cb45c65c234b5d2029da
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v23.9.0.tgz
+    version: v23.9.0
+  - apiVersion: v2
+    appVersion: v23.6.2
+    created: "2023-12-14T16:34:31Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: v0.13.1
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 71ef0c54848dfdef43e2308282b8ff35927e324cc4eaae716a2ce49c9dd14f76
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v23.6.2.tgz
+    version: v23.6.2
+  - apiVersion: v2
+    appVersion: v23.6.1
+    created: "2023-08-30T22:30:03Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: v0.13.1
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 4ed44779da3cdbcf08de33c377388c44b457d82ce0f110faefe45870b8ae8fb3
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v23.6.1.tgz
+    version: v23.6.1
+  - apiVersion: v2
+    appVersion: v23.6.0
+    created: "2023-08-04T21:44:12Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: v0.13.1
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: e004bc48bb201e8d045a1af297c7dd397d7cea86f03b3796b30e469cafd779ff
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v23.6.0.tgz
+    version: v23.6.0
+  - apiVersion: v2
+    appVersion: v23.3.2
+    created: "2023-05-23T20:25:35Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: v0.12.1
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: f8f21e120403fc028d36da4963e2f56add6b9c7adfcf0643f7bded62b009c720
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v23.3.2.tgz
+    version: v23.3.2
+  - apiVersion: v2
+    appVersion: v23.3.1
+    created: "2023-04-05T22:27:53Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: db8735976a587c4bca666c874e996b528c79472b3e283224b11900339be19321
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v23.3.1.tgz
+    version: v23.3.1
+  - apiVersion: v2
+    appVersion: v23.3.0
+    created: "2023-04-05T00:27:24Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 6c53bf85c9076b424142a416f5db5df7150b7ee9c60cc27cb3e84012e99ed058
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v23.3.0.tgz
+    version: v23.3.0
+  - apiVersion: v2
+    appVersion: v22.9.2
+    created: "2023-02-01T00:38:16Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 2309c245b8fadff5e65d7dea139a6f962ed8a2cc5b708f3f1531e87c3e509db9
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v22.9.2.tgz
+    version: v22.9.2
+  - apiVersion: v2
+    appVersion: v22.9.1
+    created: "2022-12-14T01:17:14Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: fc3e499e89a91994c86a6e92fe7327ca8ce5d4740ad5f40cec0b04b34f467e5a
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v22.9.1.tgz
+    version: v22.9.1
+  - apiVersion: v2
+    appVersion: v22.9.0
+    created: "2022-10-04T02:30:16Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: b6edf0fb80ebbc7e223c41eb686c8515c35245db3df44590d5c0aa8e5a25ae7b
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v22.9.0.tgz
+    version: v22.9.0
+  - apiVersion: v2
+    appVersion: v1.11.1
+    created: "2022-08-05T16:52:45Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 2616fa467bb17883820ed5d238f07f1dacd9f7b1c62c3c8934a0e0626edcdadc
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v1.11.1.tgz
+    version: v1.11.1
+  - apiVersion: v2
+    appVersion: v1.11.0
+    created: "2022-06-28T17:57:00Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: ad1b7d79a74b37bff76de5bf6ee437b01d94f948c76724cb0ad0948c0ed94352
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v1.11.0.tgz
+    version: v1.11.0
+  - apiVersion: v2
+    appVersion: v1.10.1
+    created: "2022-04-19T18:46:55Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 48560170599c772211d8dc44486c4d233069be6e5e890d5937a94669285ba376
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v1.10.1.tgz
+    version: v1.10.1
+  - apiVersion: v2
+    appVersion: v1.10.0
+    created: "2022-03-22T17:55:30Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 74e2fece5c5b4d64d09e2c02f12bfa156a16edefea3abd478214065b0f51c82b
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v1.10.0.tgz
+    version: v1.10.0
+  - apiVersion: v2
+    appVersion: v1.9.1
+    created: "2022-01-19T22:53:43Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: f61e4c952521d2889f5915f83d1fb36cf6544090e8f51a411b71e3d2f3e126d5
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v1.9.1.tgz
+    version: v1.9.1
+  - apiVersion: v2
+    appVersion: v1.9.0
+    created: "2021-12-02T18:34:34Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 25e185f5fd76798e0a92cb1119bc1c2c67a57115b6ef1eaed13b0558087c455b
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v1.9.0.tgz
+    version: v1.9.0
+  - apiVersion: v2
+    appVersion: v1.9.0-beta
+    created: "2021-11-20T00:42:36Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 917f3cf1beabeb0d44121a005c2d48ae66c79911ea785986bcc6ecb1a5f80934
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v1.9.0-beta.tgz
+    version: v1.9.0-beta
+  - apiVersion: v2
+    appVersion: v1.8.2
+    created: "2021-09-22T00:31:15Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 32708de815591de87faf404727a9c9b7ecb131b8cdee981d52857a88dcc73671
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v1.8.2.tgz
+    version: v1.8.2
+  - apiVersion: v2
+    appVersion: v1.8.1
+    created: "2021-08-24T16:49:07Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: b5e4ec33e37dca6d810a86cca5ba01d125cd602c578ac632432c9025837fd89b
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v1.8.1.tgz
+    version: v1.8.1
+  - apiVersion: v2
+    appVersion: v1.8.0
+    created: "2021-08-09T22:48:29Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: eeea18d347618bfa568eb00bf688e225121249a2aebff64b40b917bb35a56165
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v1.8.0.tgz
+    version: v1.8.0
+  - apiVersion: v2
+    appVersion: v1.7.1
+    created: "2021-06-11T02:24:44Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: b85c4f2826fd83786cf14cb8dbcc93495d606c54118ae20a081b238eb8bd2f66
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v1.7.1.tgz
+    version: v1.7.1
+  - apiVersion: v2
+    appVersion: v1.7.0
+    created: "2021-05-24T13:50:15Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 7b05e7f0483d15bc441ae9cd4ca6c8c135b5c426c828ee45638e2cda0b0c7006
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v1.7.0.tgz
+    version: v1.7.0
+  - apiVersion: v2
+    appVersion: 1.6.2
+    created: "2021-03-11T01:00:55Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 15d245cc6be1d1ca337d2d18bd4cf821b7017410299027f49892cd4687608aab
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-1.6.2.tgz
+    version: 1.6.2
+  - apiVersion: v2
+    appVersion: 1.6.1
+    created: "2021-03-05T20:14:59Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 27ce7d97317834bdd41ce4a52c54226accc202f3a4dcf30c03d2960e8df89b36
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-1.6.1.tgz
+    version: 1.6.1
+  - apiVersion: v2
+    appVersion: 1.6.0
+    created: "2021-02-25T19:27:48Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: bd2b149dc4fff534cee8c18ef12152afd5917d00ef1d01bfc8071775d686e9c9
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-1.6.0.tgz
+    version: 1.6.0
+  - apiVersion: v2
+    appVersion: 1.5.2
+    created: "2021-02-10T01:05:11Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 4480ceeca67b3fab905e8e029b6bcf0ddf60988721c1dbc6670e4842ded541f6
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.13.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-1.5.2.tgz
+    version: 1.5.2
+  - apiVersion: v2
+    appVersion: 1.5.1
+    created: "2021-01-27T01:40:18Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 45475db6a746e5bc2d325f0aa87c82f23a6a73c8c8c8f885dd0010ba449028dd
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.13.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-1.5.1.tgz
+    version: 1.5.1
+  - apiVersion: v2
+    appVersion: 1.5.0
+    created: "2021-01-20T01:43:19Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 89c6fab025a17449bb159e1cb90113e7a322a59e84ae608c41b544b17f6abc89
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.13.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-1.5.0.tgz
+    version: 1.5.0
+  - apiVersion: v2
+    appVersion: 1.4.0
+    created: "2020-12-11T01:10:51Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 2739efc137eade5ae4b16ba25987e3d2c729d5c70dc7a383c22ed19759da95c7
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.13.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-1.4.0.tgz
+    version: 1.4.0
+  - apiVersion: v2
+    appVersion: 1.3.0
+    created: "2020-10-30T00:49:57Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 34b4e8fb0542c4abd80212b9777822a6de781b35bb046a3c750b5ea14266db8d
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.13.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-1.3.0.tgz
+    version: 1.3.0
+  - apiVersion: v2
+    appVersion: 1.2.0
+    created: "2020-10-21T21:17:25Z"
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 49f98f11f2b75f0d712d83ce6b0c1e648763dd2fdd64b75f261055405ba98f02
+    home: https://github.com/NVIDIA/gpu-operator
+    kubeVersion: '>= 1.13.0-0'
+    name: gpu-operator
+    urls:
+    - charts/gpu-operator-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-11-14T21:06:45Z"
+    description: A Helm chart for Kubernetes
+    digest: 3a4447d60bcc22c3f04bebc496ee1b7338782fc6e002e5d5c38665a235b3bade
+    name: gpu-operator
+    urls:
+    - charts/gpu-operator-1.0.0-techpreview.1.tgz
+    version: 1.0.0-techpreview.1
+  ironyun-vaidio:
+  - apiVersion: v1
+    appVersion: 6.0.0
+    created: "2022-07-07T12:26:30Z"
+    description: Helm Chart for Ironyun VAIDIO
+    digest: 7d295bac46f36463db839945a3c81571e7800b32a9cdb62d80087ec584e54157
+    name: ironyun-vaidio
+    urls:
+    - charts/ironyun-vaidio-6.0.0-1.tgz
+    version: 6.0.0-1
+  network-operator:
+  - apiVersion: v2
+    appVersion: v24.4.1
+    created: "2024-07-21T07:20:26Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.13.2
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    description: Nvidia network operator
+    digest: 758ab59a21bd8e5dd4c356c7a8334915c12098834a69e8d860a70016cb03e401
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.21.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
     type: application
     urls:
-    - https://mrsimonemms.github.io/nvidia-helm-mirror/openfaas-amqp1-0-connector-1.1.1.tgz
-    version: 1.1.1
+    - charts/network-operator-24.4.1.tgz
+    version: 24.4.1
   - apiVersion: v2
-    appVersion: 1.1.0
-    created: "2022-11-22T11:40:09.032382545Z"
-    description: Connect OpenFaaS functions to AMQP 1.0
-    digest: d9c52410bf97f94c85dc538bdd78d7d3802f59b9210adecb8c458b36881a2887
-    home: https://gitlab.com/MrSimonEmms/openfaas-amqp1.0-connector
-    icon: https://raw.githubusercontent.com/openfaas/media/master/OpenFaaS_logo_stacked_opaque.png
+    appVersion: v24.4.0
+    created: "2024-05-29T19:03:08Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.13.2
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    description: Nvidia network operator
+    digest: 27aedb386b41a3d25b06d9cf3012886f7bf72d2296c5f5313d1fc6bd88afba0e
+    home: https://mellanox.github.io/network-operator
     keywords:
-    - functions
-    - service
-    - amqp
-    - rabbitmq
-    - azure service bus
-    maintainers:
-    - email: simon@simonemms.com
-      name: Simon Emms
-      url: https://simonemms.com
-    name: openfaas-amqp1-0-connector
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.21.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
     type: application
     urls:
-    - https://mrsimonemms.github.io/nvidia-helm-mirror/openfaas-amqp1-0-connector-1.1.0.tgz
+    - charts/network-operator-24.4.0.tgz
+    version: 24.4.0
+  - apiVersion: v2
+    appVersion: v24.1.1
+    created: "2024-04-05T07:28:19Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.13.2
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    description: Nvidia network operator
+    digest: cd610d586e31687c816834388c3442faff122a9391468a83378f28167066ef68
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.21.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
+    type: application
+    urls:
+    - charts/network-operator-24.1.1.tgz
+    version: 24.1.1
+  - apiVersion: v2
+    appVersion: v24.1.0
+    created: "2024-02-25T10:29:03Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.13.2
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    description: Nvidia network operator
+    digest: 0ac198d559da1b7b40a4da14ebf867dbcddd9793a65c698e1fb31a169c897984
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.21.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
+    type: application
+    urls:
+    - charts/network-operator-24.1.0.tgz
+    version: 24.1.0
+  - apiVersion: v2
+    appVersion: v23.10.0
+    created: "2023-12-01T17:09:16Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.13.2
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    description: Nvidia network operator
+    digest: 13d9e35a5b0f069d5cae13917de8915af19d7fb1e84209e9ead8dff4af9166a5
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.21.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
+    type: application
+    urls:
+    - charts/network-operator-23.10.0.tgz
+    version: 23.10.0
+  - apiVersion: v2
+    appVersion: v23.7.0
+    created: "2023-08-28T16:29:22Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.13.2
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    description: Nvidia network operator
+    digest: 9fa17b63be67a3d7de753fd7b2228f25d5c91171186e63c5aca2e1fcd71c2eeb
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.21.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
+    type: application
+    urls:
+    - charts/network-operator-23.7.0.tgz
+    version: 23.7.0
+  - apiVersion: v2
+    appVersion: v23.5.0
+    created: "2023-06-13T22:16:34Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.10.1
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    description: Nvidia network operator
+    digest: 73fafbff591698c108baa43c60a5260a626eeea9ee93c9aeb34904042677bc8b
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.21.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
+    type: application
+    urls:
+    - charts/network-operator-23.5.0.tgz
+    version: 23.5.0
+  - apiVersion: v2
+    appVersion: v23.4.0
+    created: "2023-05-24T19:34:30Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.10.1
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    description: Nvidia network operator
+    digest: 7c8e2e976a90c245ac676efa75a9cddd861801eb30eb951403e2a8279bb8f9c5
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.21.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
+    type: application
+    urls:
+    - charts/network-operator-23.4.0.tgz
+    version: 23.4.0
+  - apiVersion: v2
+    appVersion: v23.1.0
+    created: "2023-05-04T15:27:24Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.10.1
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    description: Nvidia network operator
+    digest: d3a5d6efec40c620638c6b89ab0030479c40565eb0b6b7a494b9b6243576b9cd
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.21.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
+    type: application
+    urls:
+    - charts/network-operator-23.1.0.tgz
+    version: 23.1.0
+  - apiVersion: v2
+    appVersion: v1.4.0
+    created: "2023-05-02T20:03:43Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.10.1
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    description: Nvidia network operator
+    digest: 479d6b595e5d3b0d2005aaec4d7bf7d4c005e177e27d500b42ba5015f475cb22
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.17.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
+    type: application
+    urls:
+    - charts/network-operator-1.4.0.tgz
+    version: 1.4.0
+  - apiVersion: v2
+    appVersion: v1.3.0
+    created: "2023-05-04T15:27:00Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.10.1
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    description: Nvidia network operator
+    digest: 470da11f248998dda9b633b1613c22040552e90dcd8faebdb52980d556ffd077
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.17.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
+    type: application
+    urls:
+    - charts/network-operator-1.3.0.tgz
+    version: 1.3.0
+  - apiVersion: v2
+    appVersion: v1.2.0
+    created: "2023-05-04T15:26:50Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.10.1
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    description: Nvidia network operator
+    digest: fc9a68bde699489a1cbfc8266d31b5a1dbaebfdb5578b9878045d6ef1db6b06b
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.17.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
+    type: application
+    urls:
+    - charts/network-operator-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
+    appVersion: v1.1.0
+    created: "2023-05-04T15:26:35Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.8.2
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    description: Nvidia network operator
+    digest: 0e036c712e0a3ee887a206076e39082b1405da9021ac6e1fc674a4b7b3bc4188
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.17.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
+    type: application
+    urls:
+    - charts/network-operator-1.1.0.tgz
     version: 1.1.0
+  nvidia-device-plugin:
+  - apiVersion: v2
+    appVersion: 0.9.0
+    created: "2021-04-29T23:11:53Z"
+    description: A Helm chart for the nvidia-device-plugin on Kubernetes
+    digest: 5b7514e15db6a72f20f8f480b467408704d8ce9e5fda331bf24d63f93aa5225d
+    home: https://github.com/NVIDIA/k8s-device-plugin
+    kubeVersion: '>= 1.10.0-0'
+    name: nvidia-device-plugin
+    urls:
+    - charts/nvidia-device-plugin-0.9.0.tgz
+    version: 0.9.0
+  nvsm:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2022-11-22T11:40:09.031489708Z"
-    description: Connect OpenFaaS functions to AMQP 1.0
-    digest: bcda1a229a7d19015d9f41a4e5735473550dd55e3a4ac862f10d12dad1e31f50
-    home: https://gitlab.com/MrSimonEmms/openfaas-amqp1.0-connector
-    icon: https://raw.githubusercontent.com/openfaas/media/master/OpenFaaS_logo_stacked_opaque.png
-    keywords:
-    - functions
-    - service
-    - amqp
-    - rabbitmq
-    - azure service bus
-    maintainers:
-    - email: simon@simonemms.com
-      name: Simon Emms
-      url: https://simonemms.com
-    name: openfaas-amqp1-0-connector
-    type: application
+    created: "2022-03-18T20:10:45Z"
+    description: A Helm chart for deploying Nvidia System Management software on DGX
+      Nodes
+    digest: 761048729cc7c01433d4940aaa7c2f386f4fa4bac619c9df63d23a73f082c116
+    name: nvsm
     urls:
-    - https://mrsimonemms.github.io/nvidia-helm-mirror/openfaas-amqp1-0-connector-1.0.1.tgz
+    - charts/nvsm-1.0.1.tgz
     version: 1.0.1
-  - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2022-11-22T11:40:09.030635913Z"
-    description: Connect OpenFaaS functions to AMQP 1.0
-    digest: dec8bbe655d0e1e480cf0e5a9312b7b1d14283e2a5287a74a6acf44c409c1fd6
-    home: https://gitlab.com/MrSimonEmms/openfaas-amqp1.0-connector
-    icon: https://raw.githubusercontent.com/openfaas/media/master/OpenFaaS_logo_stacked_opaque.png
-    keywords:
-    - functions
-    - service
-    - amqp
-    - rabbitmq
-    - azure service bus
-    maintainers:
-    - email: simon@simonemms.com
-      name: Simon Emms
-      url: https://simonemms.com
-    name: openfaas-amqp1-0-connector
-    type: application
+  tensorrt-inference-server:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-11-14T21:06:45Z"
+    description: TensorRT Inference Server
+    digest: 768058e64fa323b4810295ffa3a694adb6df5d10dae73d3487b429c5c1d79895
+    name: tensorrt-inference-server
     urls:
-    - https://mrsimonemms.github.io/nvidia-helm-mirror/openfaas-amqp1-0-connector-1.0.0.tgz
+    - charts/tensorrt-inference-server-1.0.0.tgz
     version: 1.0.0
-  openfaas-pushbullet-connector:
-  - apiVersion: v2
-    created: "2022-11-22T11:40:09.034308686Z"
-    description: Trigger OpenFaaS jobs from Pushbullet
-    digest: b24eef0c165340a670845f8a35860c25c8b86d17443364adbe4a1f9f6abd5fc7
-    home: https://github.com/MrSimonEmms/openfaas-pushbullet-connector
-    icon: https://raw.githubusercontent.com/openfaas/media/master/OpenFaaS_logo_stacked_opaque.png
-    keywords:
-    - connector
-    - functions
-    - openfaas
-    - pushbullet
-    - triggers
-    maintainers:
-    - email: simon@simonemms.com
-      name: Simon Emms
-      url: https://simonemms.com
-    name: openfaas-pushbullet-connector
-    type: application
+  tensorrtinferenceserver:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-05-13T23:48:22Z"
+    description: Triton Inference Server Helm Chart
+    digest: 2b2186b85fd562e3488017d5930e3c9cdc6e08f9411c473840a399504751f96b
+    name: tensorrtinferenceserver
     urls:
-    - https://mrsimonemms.github.io/nvidia-helm-mirror/openfaas-pushbullet-connector-0.1.0.tgz
+    - charts/tensorrtinferenceserver-1.0.0.tgz
+    version: 1.0.0
+  tritoninferenceserver:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-05-13T23:51:58Z"
+    description: Triton Inference Server Helm Chart
+    digest: 12fd93cd7a73594a1693609f5857c03c269bfdc445c1e340b84d77c09256f94c
+    name: tritoninferenceserver
+    urls:
+    - charts/tritoninferenceserver-1.0.0.tgz
+    version: 1.0.0
+  tritoninferenceserver_aws:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-12-18T01:05:46Z"
+    description: A Helm chart for Kubernetes
+    digest: 3076dd8f8db36804965d5348768bbcc20969766d6e336fd4366d4f66c939da0c
+    name: tritoninferenceserver_aws
+    urls:
+    - charts/tritoninferenceserver_aws-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-22T11:40:08.935824464Z"
+  video-analytics-demo:
+  - apiVersion: v1
+    appVersion: "1.2"
+    created: "2023-06-22T19:58:54Z"
+    description: A Helm chart for Deepstream Intelligent Video Analytics
+    digest: d72431b3fdcc96f0e8ee073671ca5c47bab9362b613b90c9424eb193ce905554
+    name: video-analytics-demo
+    urls:
+    - charts/video-analytics-demo-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v1
+    appVersion: "1.2"
+    created: "2022-05-10T23:14:02Z"
+    description: A Helm chart for Deepstream Intelligent Video Analytics
+    digest: 96bdf4d5a880f7cefb663e991e2b223daf9bd5ca0aa1d6b9d07804a3f9ea5c42
+    name: video-analytics-demo
+    urls:
+    - charts/video-analytics-demo-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v1
+    appVersion: "1.2"
+    created: "2021-12-07T22:56:28Z"
+    description: A Helm chart for Deepstream Intelligent Video Analytics
+    digest: 016f68a747c733268d0c4422a2fff8103b64b4100e3adff41a496cdce1ee670d
+    name: video-analytics-demo
+    urls:
+    - charts/video-analytics-demo-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v1
+    appVersion: "1.2"
+    created: "2021-03-20T00:09:33Z"
+    description: A Helm chart for Deepstream Intelligent Video Analytics
+    digest: f9a6c60341ee9cb75945ef9d5572eea21a6bdb12792ce03221ee221c4faf9f2f
+    name: video-analytics-demo
+    urls:
+    - charts/video-analytics-demo-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v1
+    appVersion: "1.2"
+    created: "2020-09-02T02:48:02Z"
+    description: A Helm chart for Deepstream Intelligent Video Analytics
+    digest: 29b497d5d94a40bb083a06cf1533ed006fbc96daa3d890a4f84ff4889bd701fc
+    name: video-analytics-demo
+    urls:
+    - charts/video-analytics-demo-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v1
+    appVersion: "1.2"
+    created: "2020-06-24T00:00:26Z"
+    description: A Helm chart for Deepstream Intelligent Video Analytics with WebUI
+    digest: 1d923c1a7e319c6d6f1fcd639064171ce80dd2ee993e2f2e1aeffbfc0777f3d8
+    name: video-analytics-demo
+    urls:
+    - charts/video-analytics-demo-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v1
+    appVersion: "1.2"
+    created: "2020-04-07T18:45:27Z"
+    description: A Helm chart for Deepstream Intelligent Video Analytics
+    digest: 9ae803d4a5adf35f6ad97efadb83e73816f235ffc164835ada2b1cefde6fe100
+    name: video-analytics-demo
+    urls:
+    - charts/video-analytics-demo-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v1
+    appVersion: "1.2"
+    created: "2019-11-14T21:06:45Z"
+    description: A Helm chart for Deepstream Intelligent Video Analytics
+    digest: 964b1b8e7822dd23b6c4f64cad225283738291b563e970b97da70f40a00d94aa
+    name: video-analytics-demo
+    urls:
+    - charts/video-analytics-demo-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-11-14T21:06:44Z"
+    description: A Helm chart for Kubernetes
+    digest: e782cdb27120a86afa1eecbda132ee03ee24f930995e4aa167f0fc815016e9ab
+    name: video-analytics-demo
+    urls:
+    - charts/video-analytics-demo-0.1.0.tgz
+    version: 0.1.0
+  video-analytics-demo-l4t:
+  - apiVersion: v1
+    appVersion: 0.1.3
+    created: "2023-06-13T19:50:07Z"
+    description: Deepstream Intelligent Video Analytics Helm Chart for Jetson device
+      with JetPack 5.x
+    digest: b20942a682ffcb3e0831004b77374c0dce5ab5c8fa5c732be11d214409bb8adc
+    name: video-analytics-demo-l4t
+    urls:
+    - charts/video-analytics-demo-l4t-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v1
+    appVersion: 0.1.2
+    created: "2022-05-10T23:28:07Z"
+    description: Deepstream Intelligent Video Analytics Helm Chart for Jetson device
+      with JetPack 4.6
+    digest: 89f7f15a70a8bde516c6be4766e407d6b0786c0d798fadbca318070c34679b2f
+    name: video-analytics-demo-l4t
+    urls:
+    - charts/video-analytics-demo-l4t-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    appVersion: 0.1.1
+    created: "2022-03-02T00:40:58Z"
+    description: Deepstream Intelligent Video Analytics Helm Chart for Jetson device
+      with JetPack 4.6
+    digest: 1d3af1921ab9308bdc33952456b71c74fd825dcd1b0f1f7c45902aba0b8b6fa1
+    name: video-analytics-demo-l4t
+    urls:
+    - charts/video-analytics-demo-l4t-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    appVersion: "1.2"
+    created: "2020-10-13T23:08:31Z"
+    description: Deepstream Intelligent Video Analytics Helm Chart for Xavier
+    digest: 1d75d43d73aa3dbdc2f15e5f3d059f7c7e17f963dcdffac6f96ce9a16346741b
+    name: video-analytics-demo-l4t
+    urls:
+    - charts/video-analytics-demo-l4t-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-08-12T20:21:45Z"
+serverInfo: {}
