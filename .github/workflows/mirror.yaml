@@ -5,6 +5,7 @@ on:
     - cron: "0 0 * * *" # Run at midnight every night
   workflow_dispatch:
 env:
+  CHART_NAME: gpu-operator
   GH_PAGES_URL: mrsimonemms.github.io/nvidia-helm-mirror
   REGISTRY_SOURCE: https://helm.ngc.nvidia.com/nvidia
 permissions:
@@ -26,7 +27,7 @@ jobs:
 
       - name: Download all Helm charts
         if: github.ref == 'refs/heads/main'
-        run: helm-mirror "$REGISTRY_SOURCE" "$(pwd)" --all-versions --verbose --new-root-url "https://${{ env.GH_PAGES_URL }}"
+        run: helm-mirror "$REGISTRY_SOURCE" "$(pwd)" --all-versions --verbose --new-root-url "https://${{ env.GH_PAGES_URL }}" --chart-name "${CHART_NAME}"
 
       - name: "Commit changes"
         if: github.ref == 'refs/heads/main'
