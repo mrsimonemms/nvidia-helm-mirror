@@ -953,10 +953,21 @@ entries:
     urls:
     - charts/ironyun-vaidio-6.0.0-1.tgz
     version: 6.0.0-1
+  kata-deploy:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2024-09-06T18:04:12Z"
+    description: A Helm chart for deploying Kata Containers
+    digest: 324db3b91ae60f1c26f2f064fa11e982c7f4283f4dadb8844539d139f7e955bd
+    name: kata-deploy
+    type: application
+    urls:
+    - charts/kata-deploy-0.1.0-a33a6088.tgz
+    version: 0.1.0-a33a6088
   network-operator:
   - apiVersion: v2
     appVersion: v24.7.0
-    created: "2024-08-29T19:31:30Z"
+    created: "2024-09-02T09:05:49Z"
     dependencies:
     - condition: nfd.enabled
       name: node-feature-discovery
@@ -967,7 +978,7 @@ entries:
       repository: ""
       version: 0.1.0
     description: Nvidia network operator
-    digest: 1a4831df52aa8e05e6114fa51cd37254d232dfcb49dbb47982865a0208335f28
+    digest: 092a43950d0a54f105fea373c9ca939e4e8df4c54bdd650d62287b8e7a2d4687
     home: https://mellanox.github.io/network-operator
     keywords:
     - gpu-direct
@@ -1503,5 +1514,5 @@ entries:
     urls:
     - charts/video-analytics-demo-l4t-0.1.0.tgz
     version: 0.1.0
-generated: "2024-08-29T19:32:03Z"
+generated: "2024-09-06T18:04:42Z"
 serverInfo: {}
