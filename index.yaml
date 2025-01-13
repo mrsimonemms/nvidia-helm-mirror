@@ -1036,6 +1036,27 @@ entries:
     version: 6.0.0-1
   k8s-nim-operator:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2025-01-08T01:47:45Z"
+    description: NVIDIA NIM Operator creates/configures/manages NVIDIA NIM microservices
+      in Kubernetes
+    digest: 70e9ea4f3da83317124cb25753443907c769f7fde7eaf99b33616723bfa5f167
+    home: https://docs.nvidia.com/nim-operator/latest/index.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/NIMOperator.png
+    keywords:
+    - gpu
+    - nim
+    - nemo
+    - operator
+    - ai
+    name: k8s-nim-operator
+    sources:
+    - https://github.com/NVIDIA/k8s-nim-operator
+    type: application
+    urls:
+    - charts/k8s-nim-operator-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2024-09-30T18:51:06Z"
     description: NVIDIA NIM Operator creates/configures/manages NVIDIA NIM microservices
@@ -1693,5 +1714,5 @@ entries:
     urls:
     - charts/video-analytics-demo-l4t-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-05T18:25:03Z"
+generated: "2025-01-08T01:48:02Z"
 serverInfo: {}
