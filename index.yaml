@@ -104,6 +104,33 @@ entries:
     version: 0.9.0
   gpu-operator:
   - apiVersion: v2
+    appVersion: v24.9.2
+    created: "2025-01-27T22:28:24Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: v0.16.6
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: a55ca5dfe924b8fb6d0e54d9b35ac29a4ce32515e6fbc762cbb2e7209ffcf79f
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v24.9.2.tgz
+    version: v24.9.2
+  - apiVersion: v2
     appVersion: v24.9.1
     created: "2024-12-05T18:24:40Z"
     dependencies:
@@ -1110,6 +1137,36 @@ entries:
     version: 0.1.0-103024
   network-operator:
   - apiVersion: v2
+    appVersion: v24.10.1
+    created: "2025-01-27T08:34:43Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.15.6
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    - condition: nicConfigurationOperator.enabled
+      name: nic-configuration-operator-chart
+      repository: ""
+      version: 0.0.1
+    description: Nvidia network operator
+    digest: 3679a0b502ad52732181df833a9f6dedfdbd703769017645f5db31923ef8ae26
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.21.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
+    type: application
+    urls:
+    - charts/network-operator-24.10.1.tgz
+    version: 24.10.1
+  - apiVersion: v2
     appVersion: v24.10.0
     created: "2024-11-26T10:07:18Z"
     dependencies:
@@ -1714,5 +1771,5 @@ entries:
     urls:
     - charts/video-analytics-demo-l4t-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-08T01:48:52Z"
+generated: "2025-01-27T22:28:36Z"
 serverInfo: {}
