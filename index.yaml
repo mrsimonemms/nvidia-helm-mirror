@@ -1137,6 +1137,40 @@ entries:
     version: 0.1.0-103024
   network-operator:
   - apiVersion: v2
+    appVersion: v25.1.0
+    created: "2025-02-26T17:10:04Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: http://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: 0.17.0
+    - condition: sriovNetworkOperator.enabled
+      name: sriov-network-operator
+      repository: ""
+      version: 0.1.0
+    - condition: nicConfigurationOperator.enabled
+      name: nic-configuration-operator-chart
+      repository: ""
+      version: 0.0.1
+    - condition: maintenanceOperator.enabled
+      name: maintenance-operator-chart
+      repository: ""
+      version: 0.0.1
+    description: Nvidia network operator
+    digest: fc793871484e4b9918d424b33a8a7d35ad46981c317566dad53fca2d48f1e390
+    home: https://mellanox.github.io/network-operator
+    keywords:
+    - gpu-direct
+    - rdma
+    kubeVersion: '>= 1.21.0'
+    name: network-operator
+    sources:
+    - https://github.com/Mellanox/network-operator
+    type: application
+    urls:
+    - charts/network-operator-25.1.0.tgz
+    version: 25.1.0
+  - apiVersion: v2
     appVersion: v24.10.1
     created: "2025-01-27T08:34:43Z"
     dependencies:
@@ -1771,5 +1805,5 @@ entries:
     urls:
     - charts/video-analytics-demo-l4t-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-27T22:29:34Z"
+generated: "2025-02-26T17:10:22Z"
 serverInfo: {}
