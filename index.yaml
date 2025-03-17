@@ -1632,6 +1632,17 @@ entries:
     urls:
     - charts/nvidia-device-plugin-0.9.0.tgz
     version: 0.9.0
+  nvidia-dra-driver-gpu:
+  - apiVersion: v2
+    appVersion: 25.3.0-rc.1
+    created: "2025-03-13T16:22:41Z"
+    description: Official Helm chart for the Kubernetes DRA driver for NVIDIA GPUs
+    digest: d51863d5841d39dcc31908d8e96decc58c8de1958da6e1809663b42e46b1e39d
+    name: nvidia-dra-driver-gpu
+    type: application
+    urls:
+    - charts/nvidia-dra-driver-gpu-25.3.0-rc.1.tgz
+    version: 25.3.0-rc.1
   nvsm:
   - apiVersion: v2
     appVersion: 1.0.1
@@ -1805,5 +1816,5 @@ entries:
     urls:
     - charts/video-analytics-demo-l4t-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-26T17:10:54Z"
+generated: "2025-03-13T16:22:56Z"
 serverInfo: {}
