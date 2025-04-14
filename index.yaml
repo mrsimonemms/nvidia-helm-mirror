@@ -1088,6 +1088,24 @@ entries:
     urls:
     - charts/ironyun-vaidio-6.0.0-1.tgz
     version: 6.0.0-1
+  isaac-lab-teleop:
+  - apiVersion: v2
+    appVersion: 0.0.0
+    created: "2025-04-09T19:14:41Z"
+    dependencies:
+    - import-values:
+      - child: exports
+        parent: .
+      name: cloudxr-runtime
+      repository: file://../../helm
+      version: '>=0.0.0'
+    description: A Helm chart for NVIDIA Isaac Lab Teleop
+    digest: 4b89f7c932040c4baa09f90f99033924d3b967b7d958cfa1489d54201a088aae
+    name: isaac-lab-teleop
+    type: application
+    urls:
+    - charts/isaac-lab-teleop-2.1.0.tgz
+    version: 2.1.0
   k8s-nim-operator:
   - apiVersion: v2
     appVersion: 1.0.1
@@ -1853,5 +1871,5 @@ entries:
     urls:
     - charts/video-analytics-demo-l4t-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-27T01:32:57Z"
+generated: "2025-04-09T19:15:37Z"
 serverInfo: {}
