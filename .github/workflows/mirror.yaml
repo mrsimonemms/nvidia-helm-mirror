@@ -27,7 +27,10 @@ jobs:
 
       - name: Download all Helm charts
         if: github.ref == 'refs/heads/main'
-        run: helm-mirror "$REGISTRY_SOURCE" "$(pwd)" --all-versions --verbose --new-root-url "https://${{ env.GH_PAGES_URL }}" --chart-name "${CHART_NAME}"
+        run: |
+          mkdir -p charts
+          helm-mirror "$REGISTRY_SOURCE" "$(pwd)/charts" --all-versions --verbose --new-root-url "https://${{ env.GH_PAGES_URL }}" --chart-name "${CHART_NAME}"
+          mv charts/index.yaml .
 
       - name: "Commit changes"
         if: github.ref == 'refs/heads/main'
