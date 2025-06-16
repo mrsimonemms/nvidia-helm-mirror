@@ -104,6 +104,33 @@ entries:
     version: 0.9.0
   gpu-operator:
   - apiVersion: v2
+    appVersion: v25.3.1
+    created: "2025-06-12T19:44:38Z"
+    dependencies:
+    - condition: nfd.enabled
+      name: node-feature-discovery
+      repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+      version: v0.17.3
+    description: NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes
+    digest: 2864e93afa598a161d7b94654bfccd8871a06ce5f27cbec2cea01241b07ad9b0
+    home: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html
+    icon: https://assets.nvidiagrid.net/ngc/logos/GPUoperator.png
+    keywords:
+    - gpu
+    - cuda
+    - compute
+    - operator
+    - deep learning
+    - monitoring
+    - tesla
+    kubeVersion: '>= 1.16.0-0'
+    name: gpu-operator
+    sources:
+    - https://github.com/NVIDIA/gpu-operator
+    urls:
+    - charts/gpu-operator-v25.3.1.tgz
+    version: v25.3.1
+  - apiVersion: v2
     appVersion: v25.3.0
     created: "2025-03-26T18:17:20Z"
     dependencies:
@@ -1734,6 +1761,16 @@ entries:
     version: 0.9.0
   nvidia-dra-driver-gpu:
   - apiVersion: v2
+    appVersion: 25.3.0-rc.3
+    created: "2025-06-12T18:09:11Z"
+    description: Official Helm chart for the NVIDIA DRA Driver for GPUs
+    digest: 5038194b0d3730637a4afac41a40aecb31d70549d5fc77297e49ca21c4e1b121
+    name: nvidia-dra-driver-gpu
+    type: application
+    urls:
+    - charts/nvidia-dra-driver-gpu-25.3.0-rc.3.tgz
+    version: 25.3.0-rc.3
+  - apiVersion: v2
     appVersion: 25.3.0-rc.2
     created: "2025-03-27T01:32:11Z"
     description: Official Helm chart for the NVIDIA DRA Driver for GPUs
@@ -1926,5 +1963,5 @@ entries:
     urls:
     - charts/video-analytics-demo-l4t-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-28T16:26:31Z"
+generated: "2025-06-12T19:45:45Z"
 serverInfo: {}
