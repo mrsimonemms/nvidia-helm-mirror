@@ -1761,6 +1761,16 @@ entries:
     version: 0.9.0
   nvidia-dra-driver-gpu:
   - apiVersion: v2
+    appVersion: 25.3.0-rc.4
+    created: "2025-06-26T16:48:30Z"
+    description: Official Helm chart for the NVIDIA DRA Driver for GPUs
+    digest: b41c1a7b9ad2639893cc66ed3a32499649253fc8702ef6b1e919589944bb393b
+    name: nvidia-dra-driver-gpu
+    type: application
+    urls:
+    - charts/nvidia-dra-driver-gpu-25.3.0-rc.4.tgz
+    version: 25.3.0-rc.4
+  - apiVersion: v2
     appVersion: 25.3.0-rc.3
     created: "2025-06-12T18:09:11Z"
     description: Official Helm chart for the NVIDIA DRA Driver for GPUs
@@ -1963,5 +1973,5 @@ entries:
     urls:
     - charts/video-analytics-demo-l4t-0.1.0.tgz
     version: 0.1.0
-generated: "2025-06-12T19:45:47Z"
+generated: "2025-06-26T16:49:42Z"
 serverInfo: {}
